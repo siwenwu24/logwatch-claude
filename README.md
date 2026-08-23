@@ -158,6 +158,9 @@ docker pull ghcr.io/siwenwu24/logwatch-claude:latest
 docker run --rm -v "$PWD/logs:/logs:ro" ghcr.io/siwenwu24/logwatch-claude:latest report --dir /logs
 ```
 
+The published image is multi-arch (`linux/amd64` and `linux/arm64`), so it
+runs natively on Intel/AMD hosts and on Apple Silicon.
+
 The container runs as an unprivileged user (uid 10001), so the mounted files
 need to be readable by it.
 
@@ -204,8 +207,12 @@ has no formatting, and the watcher takes an aggregator as a collaborator.
 
 `.github/workflows/ci.yml` runs the test suite on every push and pull request
 across Python 3.9–3.13, builds the Docker image, and smoke-tests it against
-the sample logs. On a push to `main` it also publishes the image to
-`ghcr.io/siwenwu24/logwatch-claude`.
+the sample logs — including checking that a line appended to a mounted volume
+while the container is running gets picked up, and that the container exits
+cleanly on `SIGTERM`. On a push to `main` it also publishes a multi-arch image
+to `ghcr.io/siwenwu24/logwatch-claude`.
+
+Tags published on `main`: `latest`, `main`, and `sha-<commit>`.
 
 ## License
 
