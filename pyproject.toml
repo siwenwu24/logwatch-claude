@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logwatch"
+version = "0.1.0"
+description = "A small log aggregation service: watch a directory of .log files and report on levels and keywords."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "logwatch contributors" }]
+keywords = ["logs", "logging", "aggregation", "cli", "monitoring"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Logging",
+]
+dependencies = ["click>=8.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[project.scripts]
+logwatch = "logwatch.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/siwenwu24/logwatch-claude"
+Issues = "https://github.com/siwenwu24/logwatch-claude/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+source = ["logwatch"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]

@@ -1,0 +1,17 @@
+2026-08-23 09:57:44 INFO postgres connection pool initialised with 20 connections
+2026-08-23 09:58:00 INFO replication stream connected to primary db-primary-01
+2026-08-23 09:58:39 DEBUG slow query log threshold set to 500ms
+2026-08-23 09:59:12 WARNING slow query detected: SELECT on orders took 1204ms
+2026-08-23 09:59:30 ERROR database connection failed: too many clients already
+2026-08-23 09:59:30 ERROR connection pool exhausted, 20 of 20 connections busy
+2026-08-23 09:59:33 WARNING deadlock detected on table inventory, retrying transaction
+2026-08-23 09:59:34 INFO transaction retry succeeded after deadlock
+2026-08-23 10:00:01 INFO vacuum analyze completed on table orders in 4.2s
+2026-08-23 10:00:48 WARNING replication lag 3400ms behind primary
+2026-08-23 10:01:02 INFO replication lag recovered to 120ms
+2026-08-23 10:01:55 ERROR query timeout on analytics database after 30000ms
+2026-08-23 10:02:20 INFO checkpoint written, 1842 buffers flushed
+2026-08-23 10:02:59 DEBUG index scan chosen for query plan on users_email_idx
+2026-08-23 10:03:40 CRITICAL primary database unreachable, initiating failover
+2026-08-23 10:03:58 INFO failover complete, db-replica-02 promoted to primary
+2026-08-23 10:04:11 INFO database connection pool rebuilt against new primary

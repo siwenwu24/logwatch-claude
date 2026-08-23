@@ -1,0 +1,16 @@
+2026-08-23T09:58:10 INFO auth service ready, jwt signing key loaded
+2026-08-23T09:58:22 INFO user login succeeded for account 4471
+2026-08-23T09:58:45 INFO user login succeeded for account 9082
+2026-08-23T09:59:01 WARN failed login attempt for account 4471, invalid password
+2026-08-23T09:59:04 WARN failed login attempt for account 4471, invalid password
+2026-08-23T09:59:08 WARN failed login attempt for account 4471, invalid password
+2026-08-23T09:59:08 ERROR account 4471 locked after 3 failed login attempts
+2026-08-23T09:59:40 INFO password reset email queued for account 4471
+2026-08-23T10:00:12 INFO token refresh succeeded for session a91f2b
+2026-08-23T10:00:30 ERROR jwt validation failed: token expired
+2026-08-23T10:00:31 INFO client redirected to login after token expired
+2026-08-23T10:01:20 AUDIT permission grant admin:write added to account 9082
+2026-08-23T10:01:44 INFO user logout for account 9082
+2026-08-23T10:02:33 WARNING suspicious login location for account 3310, mfa challenge issued
+2026-08-23T10:02:51 INFO mfa challenge passed for account 3310
+2026-08-23T10:03:29 ERROR oauth provider returned 500, falling back to local auth

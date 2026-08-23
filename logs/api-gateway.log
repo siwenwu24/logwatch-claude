@@ -1,0 +1,18 @@
+2026-08-23T09:58:01 INFO api-gateway starting up version 2.4.1 on port 8080
+2026-08-23T09:58:01 INFO loaded 42 upstream routes from config
+2026-08-23T09:58:02 DEBUG health check endpoint registered at /healthz
+2026-08-23T09:58:14 INFO request GET /v1/users completed in 34ms status 200
+2026-08-23T09:58:15 INFO request GET /v1/users/8821 completed in 12ms status 200
+2026-08-23T09:59:03 WARNING upstream latency degraded: payments service responded in 1840ms
+2026-08-23T09:59:04 INFO request POST /v1/orders completed in 210ms status 201
+2026-08-23T09:59:31 ERROR upstream timeout contacting payments service after 5000ms
+2026-08-23T09:59:31 WARNING circuit breaker opened for upstream payments
+2026-08-23T09:59:32 ERROR request POST /v1/orders failed with status 503
+2026-08-23T10:00:02 INFO circuit breaker half-open, probing payments service
+2026-08-23T10:00:05 INFO circuit breaker closed, payments service recovered
+2026-08-23T10:00:44 INFO request GET /v1/orders/5512 completed in 28ms status 200
+2026-08-23T10:01:10 WARNING rate limit reached for client 10.2.44.7, throttling requests
+2026-08-23T10:01:12 INFO request GET /v1/products completed in 19ms status 200
+2026-08-23T10:02:00 DEBUG connection pool size 24 active 6 idle 18
+2026-08-23T10:02:41 ERROR malformed json payload rejected on POST /v1/orders
+2026-08-23T10:03:15 INFO request DELETE /v1/sessions completed in 8ms status 204

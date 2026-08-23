@@ -1,0 +1,21 @@
+2026-08-23T09:58:05 INFO worker pool started with 8 workers
+2026-08-23T09:58:30 INFO job 10021 image-resize started
+2026-08-23T09:58:34 INFO job 10021 image-resize completed in 3.9s
+2026-08-23T09:59:00 INFO job 10022 report-export started
+2026-08-23T09:59:25 ERROR job 10022 report-export failed: database connection failed
+Traceback (most recent call last):
+  File "/app/worker/jobs.py", line 88, in run
+    conn = pool.acquire(timeout=5)
+psycopg.OperationalError: connection pool exhausted
+2026-08-23T09:59:26 WARNING job 10022 scheduled for retry 1 of 3 in 30s
+2026-08-23T09:59:56 INFO job 10022 report-export retry 1 started
+2026-08-23T10:00:19 INFO job 10022 report-export completed in 23.1s
+2026-08-23T10:00:40 DEBUG queue depth 14, oldest job waiting 8s
+2026-08-23T10:01:05 INFO job 10023 email-digest started
+2026-08-23T10:01:07 ERROR job 10023 email-digest failed: smtp timeout contacting mail relay
+2026-08-23T10:01:08 WARNING job 10023 scheduled for retry 1 of 3 in 30s
+2026-08-23T10:01:38 INFO job 10023 email-digest retry 1 started
+2026-08-23T10:01:41 ERROR job 10023 email-digest failed: smtp timeout contacting mail relay
+2026-08-23T10:01:42 CRITICAL job 10023 exhausted all retries, moved to dead letter queue
+2026-08-23T10:02:15 INFO job 10024 thumbnail-generate completed in 1.2s
+2026-08-23T10:03:00 INFO worker pool healthy, 8 of 8 workers responsive

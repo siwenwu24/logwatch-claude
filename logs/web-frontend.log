@@ -1,0 +1,17 @@
+2026-08-23T09:58:12 INFO frontend server listening on port 3000
+2026-08-23T09:58:20 DEBUG static asset cache warmed with 214 entries
+2026-08-23T09:58:55 INFO page render /dashboard completed in 88ms
+
+2026-08-23T09:59:10 WARNING slow page render /reports took 2100ms
+2026-08-23T09:59:33 ERROR api request to gateway failed with status 503
+2026-08-23T09:59:33 ERROR dashboard widget failed to load: upstream timeout
+2026-08-23T09:59:35 INFO retrying failed api request to gateway
+2026-08-23T09:59:38 INFO dashboard widget loaded on retry
+this line has no timestamp and should be counted as malformed
+2026-08-23T10:00:22 INFO page render /settings completed in 54ms
+2026-08-23T10:00:58 WARNING deprecated api endpoint /v0/profile used by client
+2026-08-23T10:01:30 info page render /profile completed in 61ms
+2026-08-23T10:02:04 ERROR uncaught exception in client bundle: cannot read property id of undefined
+2026-08-23T10:02:44 INFO service worker updated to build 2f8a91
+2026-08-23T10:03:21 DEBUG websocket connection established for session 77120
+2026-08-23T10:03:50 WARNING websocket reconnect attempt 1 after unexpected close
