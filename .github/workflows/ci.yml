@@ -110,8 +110,14 @@ jobs:
           echo "2026-08-23T10:00:05 ERROR appended during watch" >> /tmp/livelogs/live.log
           sleep 3
           docker stop -t 10 lw-live
-          docker logs lw-live
-          docker logs lw-live 2>&1 | grep -q "ERROR" \
+
+          # Write the logs to a file rather than piping into grep: under
+          # `pipefail`, `grep -q` exits at the first match and SIGPIPEs
+          # `docker logs`, which fails the pipeline even on success.
+          docker logs lw-live > /tmp/lw-live.log 2>&1
+          cat /tmp/lw-live.log
+
+          grep -q "appended" /tmp/lw-live.log \
             || { echo "watcher did not pick up the appended line"; exit 1; }
           test "$(docker inspect -f '{{.State.ExitCode}}' lw-live)" = "0"
           docker rm lw-live
